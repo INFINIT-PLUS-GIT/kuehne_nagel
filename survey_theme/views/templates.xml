@@ -1,0 +1,65 @@
+<odoo>
+    <data>
+      <template id="header_survey" name="Header">
+        <header>
+            <nav class="navbar navbar-expand navbar-light bg-light">
+                <div class="container">
+                    <a href="/" class="navbar-brand logo">
+                        <img t-att-src="'/logo.png?company=%s' % res_company.id" t-att-alt="'Logo of %s' % res_company.name" t-att-title="res_company.name"/>
+                    </a>
+                    <ul id="top_menu" class="nav navbar-nav ml-auto">
+                        <t t-call="portal.placeholder_user_sign_in">
+                            <t t-set="_item_class" t-value="'nav-item'"/>
+                            <t t-set="_link_class" t-value="'nav-link'"/>
+                        </t>
+                        <t t-call="portal.user_dropdown">
+                            <t t-set="_user_name" t-value="true"/>
+                            <t t-set="_item_class" t-value="'nav-item dropdown'"/>
+                            <t t-set="_link_class" t-value="'nav-link'"/>
+                            <t t-set="_dropdown_menu_class" t-value="'dropdown-menu-right'"/>
+                        </t>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+      </template>
+      <template id="o_survey_wrap" inherit_id="survey.survey_page_fill">
+        <xpath expr="//div[hasclass('o_survey_wrap')]" position="before">
+            <t t-call="survey_theme.header_survey"/>
+        </xpath>
+      </template>
+      <template id="o_survey_wrap_title" inherit_id="survey.survey_fill_header">
+        <xpath expr="//h1[hasclass('o_survey_main_title')]" position="attributes">
+            <attribute name="class">o_survey_main_title pt-4 float-right</attribute>
+        </xpath>
+        <xpath expr="//div[hasclass('col-10')]" position="attributes">
+            <attribute name="class">col-5 offset-7</attribute>
+        </xpath>
+      </template>
+      <template id="question_simple_choice_inherit"  inherit_id="survey.question_simple_choice">
+        <xpath expr='//div[@data-question-type="simple_choice_radio"]' position="attributes">
+          <attribute name="t-att-data-type-q">'yesno' if question.type_simple_question == 'yesno' else 'rate' if question.type_simple_question == 'rate' else 'other'</attribute>
+        </xpath>
+        
+      </template>
+      <template id="question_multiple_choice_inherit"  inherit_id="survey.question_multiple_choice">
+       <xpath expr='//div[hasclass("o_survey_question_multiple_choice")]' position="attributes">
+          <attribute name="class" add="multiple_choice_vertical" separator=" "/>
+        </xpath>
+      </template>
+      <template id="survey_fill_form_in_progress_inherit"  inherit_id="survey.survey_fill_form_in_progress">
+        <xpath expr="//div[hasclass('mb256')]" position="attributes">
+          <attribute name="class" add="btns-survey" separator=" "/>
+        </xpath>
+        <xpath expr="//div[hasclass('row')][1]" position="attributes">
+          <attribute name="class" add="btns-survey" separator=" "/>
+        </xpath>
+      </template>
+      <template id="survey_assets_inherit"  inherit_id="survey.survey_assets">
+        <xpath expr="." position="inside">
+          <script type="text/javascript" src="/survey_theme/static/src/js/survey.js"/> 
+          <link rel="stylesheet" type="text/scss" href="/survey_theme/static/src/scss/style.scss"/>
+        </xpath>
+      </template>
+    </data>
+</odoo>
