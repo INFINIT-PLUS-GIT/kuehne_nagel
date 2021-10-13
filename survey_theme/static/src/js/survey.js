@@ -3,8 +3,6 @@ odoo.define('survey_theme.styles', function (require) {
 
 
     $(document).ready(function(){
-        console.log($(".o_survey_start"))
-        console.log("ASDASDAS")
         if(!$(".o_survey_start").length){
             hide_background()
         }else{

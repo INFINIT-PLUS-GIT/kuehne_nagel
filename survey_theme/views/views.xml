@@ -8,7 +8,13 @@
           <field name="type_simple_question" 
            attrs="{'invisible':[('question_type','!=','simple_choice')]}"/>
         </xpath>
+        <xpath expr="//field[@name='triggering_answer_id']" position="replace">
+          <field name="triggering_answer_id" widget="many2many_tags" options="{'no_open': True, 'no_create': True}"
+                                           attrs="{'invisible': ['|', ('is_conditional','=', False), ('triggering_question_id','=', False)],
+                                                   'required': [('is_conditional','=', True)]}"/>
+        </xpath>
       </field>
     </record>
+    
   </data>
 </odoo>

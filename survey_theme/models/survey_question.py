@@ -12,6 +12,10 @@ class survey_nps(models.Model):
         selection=[('yesno', 'Yes or No'), ('rate', 'Rate'),('other','Other')],
         default='other'
     )
+    triggering_answer_id = fields.Many2many(
+        'survey.question.answer', string="Triggering Answer", copy=False, compute="_compute_triggering_answer_id",
+        store=True, readonly=False, help="Answer that will trigger the display of the current question.",
+        domain="[('question_id', '=', triggering_question_id)]")
     
     
     

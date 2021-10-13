@@ -1,13 +1,12 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "survey_theme",
+    'name': "Surveys Theme",
 
     'summary': """
-        Short (1 phrase/line) summary of the module's purpose, used as
-        subtitle on modules listing or apps.openerp.com""",
+        Change styles of survey""",
 
     'description': """
-        Long description of module's purpose
+        Change styles of survey and add more conditional values
     """,
 
     'author': "My Company",
