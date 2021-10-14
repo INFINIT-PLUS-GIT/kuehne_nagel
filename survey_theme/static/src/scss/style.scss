@@ -8,8 +8,8 @@ header {
     }
 }
 .o_survey_brand_message {
-    div{
-        &:first-child{
+    div {
+        &:first-child {
             display: none !important;
         }
     }
@@ -48,10 +48,19 @@ header {
 //         margin-top: 4rem;
 //     }
 // }
+.o_survey_navigation_wrapper {
+    .o_survey_navigation_submit {
+        &:first-child {
+            i {
+                border-left: none !important;
+            }
+        }
+    }
+}
 .o_survey_start {
     .oe_no_empty {
         font-size: 1.5em;
-        p{
+        p {
             color: #404040 !important;
         }
     }
