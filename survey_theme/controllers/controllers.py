@@ -6,10 +6,6 @@ from odoo.addons.survey.controllers.main import Survey
 class SurveyTheme(Survey):
 
     def _prepare_survey_data(self, survey_sudo, answer_sudo, **post):
-        """ This method prepares all the data needed for template rendering, in function of the survey user input state.
-            :param post:
-                - previous_page_id : come from the breadcrumb or the back button and force the next questions to load
-                                     to be the previous ones. """
         data = {
             'is_html_empty': is_html_empty,
             'survey': survey_sudo,

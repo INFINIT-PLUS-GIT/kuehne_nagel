@@ -8,7 +8,11 @@ header {
     }
 }
 .o_survey_brand_message {
-    display: none;
+    div{
+        &:first-child{
+            display: none !important;
+        }
+    }
 }
 .background-none {
     background: none !important;
