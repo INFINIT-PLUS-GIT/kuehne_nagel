@@ -46,7 +46,10 @@ header {
 }
 .o_survey_start {
     .oe_no_empty {
-        font-size: 1.2em;
+        font-size: 1.5em;
+        p{
+            color: #404040 !important;
+        }
     }
     .mb32 {
         display: flex;
