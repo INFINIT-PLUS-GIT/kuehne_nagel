@@ -28,6 +28,42 @@
         <t t-call="survey_theme.header_survey"/>
       </xpath>
     </template>
+    <template id="test_layout" inherit_id="survey.layout" name="Survey Layout">
+      <xpath expr="//div[hasclass('text-right')]" position="replace">
+      <div class="row">
+        <div class="col-6 offset-3 d-flex justify-content-center">
+            <div class="o_survey_brand_message rounded mr-3 border">
+              <div class="px-2 py-2 d-inline-block" t-call="web.brand_promotion_message">
+                  <t t-set="_message"></t>
+                  <t t-set="_utm_medium" t-valuef="survey"/>
+              </div>
+              <div class="o_survey_navigation_wrapper d-inline-block" t-call="survey.survey_navigation">
+              </div>
+          </div>
+        </div>
+        <div class="col-3 text-right">
+           <div class="o_survey_progress_wrapper d-inline-block pr-5 text-left">
+            <t t-call="survey.survey_progression" t-if="survey and survey.questions_layout != 'one_page' and answer and answer.state == 'in_progress' and (not question or not question.is_page)">
+              <t t-if="survey.questions_layout == 'page_per_section'">
+                <t t-set="page_ids" t-value="survey.page_ids.ids"/>
+                <t t-set="page_number" t-value="page_ids.index(page.id) + (1 if survey.progression_mode == 'number' else 0)"/>
+              </t>
+              <t t-else="">
+                <t t-set="page_ids" t-value="survey.question_ids.ids"/>
+                <t t-set="page_number" t-value="page_ids.index(question.id)"/>
+              </t>
+            </t>
+          </div>
+        </div>
+      </div>
+        <!-- <div class="py-3 m-0 p-0 d-flex justify-content-center">
+          
+        </div>
+        <div class="py-3 m-0 p-0 text-right">
+         
+        </div> -->
+      </xpath>
+    </template>
 
     <template id="survey_fill_form_inherit" inherit_id="survey.survey_fill_form">
       <xpath expr="//form" position="attributes">
