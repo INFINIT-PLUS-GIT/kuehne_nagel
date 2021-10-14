@@ -23,6 +23,7 @@
         </nav>
       </header>
     </template>
+    
     <template id="o_survey_wrap" inherit_id="survey.survey_page_fill">
       <xpath expr="//div[hasclass('o_survey_wrap')]" position="before">
         <t t-call="survey_theme.header_survey"/>
@@ -32,13 +33,13 @@
       <xpath expr="//div[hasclass('text-right')]" position="replace">
         <div class="container-fluid">
           <div class="row">
-            <div class="col-6 offset-3 d-flex justify-content-center">
+            <div id="pagination_controls" class="col-6 offset-3 d-flex justify-content-center hide" >
               <div class="o_survey_brand_message rounded mr-3 border">
                 <div class="px-2 py-2 d-inline-block" t-call="web.brand_promotion_message">
                   <t t-set="_message"></t>
                   <t t-set="_utm_medium" t-valuef="survey"/>
                 </div>
-                <div class="o_survey_navigation_wrapper d-inline-block" t-call="survey.survey_navigation">
+                <div class="o_survey_navigation_wrapper d-inline-block"  t-call="survey.survey_navigation">
                 </div>
               </div>
             </div>
@@ -229,6 +230,20 @@
       </xpath>
 
     </template>
+    <template id="survey_navigation_inherit" name="Survey navigation inherit" inherit_id="survey.survey_navigation">
+      <xpath expr="//i[hasclass('fa-chevron-left')]" position="replace">
+        <i class="fa fa-chevron-left p-2"/><span class="mr-2">Previous</span>
+      </xpath>
+      <xpath expr="//i[hasclass('fa-chevron-right')]" position="replace">
+        <t t-if="not survey_last">
+          <span class="ml-2">Continue</span>
+        </t>
+        <t t-else="">
+          <span class="ml-2">Send</span>
+        </t>
+        <i class="fa fa-chevron-right p-2"/>
+      </xpath>
+    </template>
     <template id="survey_fill_form_in_progress_inherit" inherit_id="survey.survey_fill_form_in_progress">
       <xpath expr="//div[hasclass('mb256')]" position="attributes">
         <attribute name="class" add="btns-survey" separator=" "/>
@@ -237,8 +252,6 @@
         <attribute name="class" add="btns-survey" separator=" "/>
       </xpath>
     </template>
-
-
     <template id="survey_assets_inherit" inherit_id="survey.survey_assets">
       <xpath expr="." position="inside">
         <script type="text/javascript" src="/survey_theme/static/src/js/survey.js"/>
