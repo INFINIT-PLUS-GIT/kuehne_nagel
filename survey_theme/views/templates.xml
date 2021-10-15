@@ -72,7 +72,7 @@
       <xpath expr="//div[hasclass('o_survey_start')]" position="replace">
         <div class="wrap container-fluid o_survey_start">
           <div class='row mb32'>
-            <div class="oe_no_empty col-6 offset-6 mb-5">
+            <div class="oe_no_empty col-6 offset-6 mb-3">
               <div class="text-right" t-field="survey.description"/>
             </div>
             <t t-if="answer.is_session_answer">
