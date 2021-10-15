@@ -23,5 +23,5 @@ class SurveyInvite(models.TransientModel):
     @api.onchange('category_ids')
     def _onchange_category(self):
         for r in self:
-            r.write({'partner_ids':[(6, None, r.env['res.partner'].search([('category_id','in',r.category_ids.ids),('parent_id','>',0),('email','!=','')]).ids)]})
+            r.write({'partner_ids':[(6, None, r.env['res.partner'].search([('category_id','in',r.category_ids.ids),('email','!=','')]).ids)]})
             
