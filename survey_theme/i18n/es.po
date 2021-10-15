@@ -1,0 +1,152 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* survey_theme
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0+e-20210321\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-10-14 23:34+0000\n"
+"PO-Revision-Date: 2021-10-14 18:35-0500\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: es\n"
+"X-Generator: Poedit 2.2.4\n"
+
+#. module: survey_theme
+#: model_terms:ir.ui.view,arch_db:survey_theme.survey_navigation_inherit
+msgid "<i class=\"fa fa-chevron-left p-2\"/><span class=\"mr-2\">Previous</span>"
+msgstr ""
+"<i class=\"fa fa-chevron-left p-2\"/><span class=\"mr-2\">Anterior</span>"
+
+#. module: survey_theme
+#: model_terms:ir.ui.view,arch_db:survey_theme.survey_navigation_inherit
+msgid "<span class=\"ml-2\">Continue</span>"
+msgstr "<span class=\"ml-2\">Siguiente</span>"
+
+#. module: survey_theme
+#: model_terms:ir.ui.view,arch_db:survey_theme.survey_navigation_inherit
+msgid "<span class=\"ml-2\">Send</span>"
+msgstr "<span class=\"ml-2\">Enviar</span>"
+
+#. module: survey_theme
+#: model_terms:ir.ui.view,arch_db:survey_theme.survey_fill_form_start_inherit
+msgid ""
+"<span class=\"o_survey_enter font-weight-bold text-muted ml-2\">or press "
+"Enter</span>"
+msgstr ""
+
+#. module: survey_theme
+#: model_terms:ir.ui.view,arch_db:survey_theme.survey_fill_form_start_inherit
+msgid "<span>Time limit for this survey: </span>"
+msgstr "<span>Límite de tiempo para esta encuesta:</span>"
+
+#. module: survey_theme
+#: model:ir.model.fields,field_description:survey_theme.field_survey_invite__category_ids
+msgid "Add by tags"
+msgstr "Añadir por categoria"
+
+#. module: survey_theme
+#: model:ir.model.fields,help:survey_theme.field_survey_question__triggering_answer_id
+msgid "Answer that will trigger the display of the current question."
+msgstr ""
+
+#. module: survey_theme
+#: model:ir.model.fields,field_description:survey_theme.field_survey_invite__display_name
+#: model:ir.model.fields,field_description:survey_theme.field_survey_question__display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: survey_theme
+#: model:ir.model.fields,field_description:survey_theme.field_survey_invite__id
+#: model:ir.model.fields,field_description:survey_theme.field_survey_question__id
+msgid "ID"
+msgstr ""
+
+#. module: survey_theme
+#: model:ir.model.fields,field_description:survey_theme.field_survey_invite____last_update
+#: model:ir.model.fields,field_description:survey_theme.field_survey_question____last_update
+msgid "Last Modified on"
+msgstr "Última modificación el"
+
+#. module: survey_theme
+#: model:ir.model.fields.selection,name:survey_theme.selection__survey_question__type_simple_question__other
+msgid "Other"
+msgstr "Otro"
+
+#. module: survey_theme
+#: model:ir.model.fields.selection,name:survey_theme.selection__survey_question__type_simple_question__rate
+msgid "Rate"
+msgstr "Calificación"
+
+#. module: survey_theme
+#: model_terms:ir.ui.view,arch_db:survey_theme.survey_fill_form_start_inherit
+msgid "Start Certification"
+msgstr "Iniciar certificación"
+
+#. module: survey_theme
+#: model_terms:ir.ui.view,arch_db:survey_theme.survey_fill_form_start_inherit
+msgid "Start Survey"
+msgstr "Iniciar Encuesta"
+
+#. module: survey_theme
+#: model:ir.model,name:survey_theme.model_survey_invite
+msgid "Survey Invitation Wizard"
+msgstr "Asistente de invitación a encuestas"
+
+#. module: survey_theme
+#: model:ir.model,name:survey_theme.model_survey_question
+msgid "Survey Question"
+msgstr "Pregunta de la encuesta"
+
+#. module: survey_theme
+#. openerp-web
+#: code:addons/survey_theme/static/src/js/survey_form.js:0
+#, python-format
+msgid "The date you selected is greater than the maximum date: "
+msgstr ""
+
+#. module: survey_theme
+#. openerp-web
+#: code:addons/survey_theme/static/src/js/survey_form.js:0
+#, python-format
+msgid "The date you selected is lower than the minimum date: "
+msgstr ""
+
+#. module: survey_theme
+#: model_terms:ir.ui.view,arch_db:survey_theme.survey_fill_form_start_inherit
+msgid "The session will begin automatically when the host starts."
+msgstr "La sesión comenzará automáticamente cuando se inicie el anfitrión."
+
+#. module: survey_theme
+#. openerp-web
+#: code:addons/survey_theme/static/src/js/survey_form.js:0
+#, python-format
+msgid "This answer must be an email address."
+msgstr ""
+
+#. module: survey_theme
+#. openerp-web
+#: code:addons/survey_theme/static/src/js/survey_form.js:0
+#, python-format
+msgid "This is not a date"
+msgstr ""
+
+#. module: survey_theme
+#: model:ir.model.fields,field_description:survey_theme.field_survey_question__triggering_answer_id
+msgid "Triggering Answer"
+msgstr "Respuesta desencadenante"
+
+#. module: survey_theme
+#: model:ir.model.fields,field_description:survey_theme.field_survey_question__type_simple_question
+msgid "Type"
+msgstr "Tipo"
+
+#. module: survey_theme
+#: model:ir.model.fields.selection,name:survey_theme.selection__survey_question__type_simple_question__yesno
+msgid "Yes or No"
+msgstr "Si o No"

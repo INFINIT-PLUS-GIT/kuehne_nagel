@@ -1,0 +1,28 @@
+<odoo>
+  <data>
+    <record id="inherit_survey_question" model="ir.ui.view">
+      <field name="model">survey.question</field>
+      <field name="inherit_id" ref="survey.survey_question_form"/>
+      <field name="arch" type="xml">
+        <xpath expr="//field[@name='question_type']" position="after">
+          <field name="type_simple_question" 
+           attrs="{'invisible':[('question_type','!=','simple_choice')]}"/>
+        </xpath>
+        <xpath expr="//field[@name='triggering_answer_id']" position="replace">
+          <field name="triggering_answer_id" widget="many2many_tags" options="{'no_open': True, 'no_create': True}"
+                                           attrs="{'invisible': ['|', ('is_conditional','=', False), ('triggering_question_id','=', False)],
+                                                   'required': [('is_conditional','=', True)]}"/>
+        </xpath>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="survey_invite_view_form_inherit">
+      <field name="model">survey.invite</field>
+      <field name="inherit_id" ref="survey.survey_invite_view_form"/>
+      <field name="arch" type="xml">
+        <xpath expr="//field[@name='partner_ids']" position="before">
+          <field name="category_ids" widget="many2many_tags"/>
+        </xpath>
+      </field>
+    </record>
+  </data>
+</odoo>
