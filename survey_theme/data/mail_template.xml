@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+         <record id="mail_template_user_input_invite_KN" model="mail.template">
+            <field name="name">Survey: Invite KN</field>
+            <field name="model_id" ref="survey.model_survey_user_input" />
+            <field name="subject">Participate to ${object.survey_id.title} survey</field>
+            <field name="email_to">${(object.partner_id.email_formatted or object.email) |safe}</field>
+            <field name="body_html" type="html">
+
+<div class="classe-new" style="margin: 0px; padding: 0px; font-size: 13px; display:flex; justify-content: space-around;">
+    <div style="width:50%;overflow: hidden;">
+        <img src="/survey_theme/static/src/img/demo.png" style="max-width:100%;height:auto"/>
+    </div>
+    <div style="width:50%;text-align:center">
+        <div class="" style="margin-top:40%">
+            <p style="margin: 0px; padding: 0px; font-size: 13px; text-align:center">
+                Dear ${object.partner_id.name or 'participant'}<br/><br/>
+                % if object.survey_id.certification:
+                    You have been invited to take a new certification.
+                % else:
+                    We are conducting a survey and your response would be appreciated.
+                % endif
+            </p>
+            <div style="margin: 16px 0px 16px 0px; text-align:center">
+                <a href="${(object.get_start_url()) | safe}"
+                    style="background-color: #124174; padding: 8px 16px 8px 16px; text-decoration: none; color: #fff; border-radius: 5px; font-size:13px;">
+                    % if object.survey_id.certification:
+                        Start Certification
+                    % else:
+                        Start Survey
+                    % endif
+                </a>
+            </div>
+            <div class="" style="text-align:center">
+                % if object.deadline:
+                    Please answer the survey for ${format_date(object.deadline)}.<br/><br/>
+                % endif
+                Thank you for your participation.
+            </div>
+        </div>
+    </div>
+</div>
+            </field>
+            <field name="lang">${object.partner_id.lang}</field>
+            <field name="auto_delete" eval="True"/>
+        </record>
+
+    </data>
+</odoo>
