@@ -2,7 +2,18 @@
 
 from odoo import models, fields, api
 
+class Survey(models.Model):
+    _inherit = 'survey.survey'
+    background_image = fields.Binary("Background Image", attachment=True)
+    
+    def get_url_img(self):
 
+        attachment = self.env['ir.attachment'].search([('res_model', '=', 'survey.survey'), ('res_id', '=', self.id)], limit=1)
+        img_url = "/web/image/ir.attachment/%s/datas" % attachment.id
+
+        return img_url
+        # For website/report
+        #<img t-att-src="/web/image/ir.attachment/attachment.id/datas"/>
 class survey_nps(models.Model):
     _inherit = 'survey.question'
     
