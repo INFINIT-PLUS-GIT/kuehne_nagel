@@ -24,5 +24,10 @@
         </xpath>
       </field>
     </record>
+    <record id="contacts.action_contacts" model="ir.actions.act_window">
+      <field name="context">{"search_default_type_company":1,'default_is_company': True}</field>
+    </record>
+
+    
   </data>
 </odoo>
