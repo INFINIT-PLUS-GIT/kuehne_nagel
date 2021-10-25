@@ -20,6 +20,8 @@
       <field name="inherit_id" ref="survey.survey_invite_view_form"/>
       <field name="arch" type="xml">
         <xpath expr="//field[@name='partner_ids']" position="before">
+          <field name="show_laggards" invisible="1"/>
+          <field name="exist_laggards" widget="boolean_toggle" attrs="{'invisible': [('show_laggards', '!=', True)]}"/>
           <field name="category_ids" widget="many2many_tags"/>
         </xpath>
       </field>
